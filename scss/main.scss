@@ -24,6 +24,10 @@
     align-items: center;
     font-size: 30px;
    }
+   .theme{
+    background: none;
+    border: none;
+   }
 
    .todo-list{
     top: -100px;
@@ -65,6 +69,15 @@
     background-color:#f5f5f5 ;
     width: 100%;
     padding: 20px;
+   }
+
+.bottom-text1{
+    display: flex;
+    justify-content: space-around;
+}
+   .DragAndDrop{
+    margin: 100px;
+    text-align: center;
    }
     .page-title{
         @include text(white,18mpx,10px)
