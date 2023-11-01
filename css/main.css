@@ -17,6 +17,13 @@ body {
   padding: 80px 0px 150px;
 }
 
+.darkbgdesktop {
+  background-image: url("../images/bg-desktop-dark.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 80px 0px 150px;
+}
+
 .container {
   width: 80%;
   max-width: 800px;

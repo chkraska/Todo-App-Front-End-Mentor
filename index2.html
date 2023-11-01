@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Frontend Mentor | Todo app</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <script src="script.js" async></script>
+  </head>
+  <body class="darkmode">
+    <main class="app">
+      <section class="title">
+        <div class="title-todo">
+          <h1>TODO</h1>
+          <img src="images/icon-moon.svg" class="theme" alt="icon" />
+        </div>
+      </section>
+
+      <section class="todo-input">
+        <form id="new-todo-form">
+          <label>
+            <input type="checkbox" name="input" />
+            <span class="bubble"></span>
+          </label>
+
+          <div class="todo-content-input">
+            <input
+              type="text"
+              class="input-text dark-theme"
+              name="content"
+              id="content"
+              placeholder="Create a new todo..."
+            />
+          </div>
+        </form>
+      </section>
+
+      <section class="todo-list">
+        <div class="list-container" id="todo-list"></div>
+      </section>
+
+      <section class="state-clear display">
+        <div class="count">no items</div>
+
+        <div class="desktop-state-buttons">
+          <button class="states-buttons all-button">All</button>
+          <button class="states-buttons active-button">Active</button>
+          <button class="states-buttons completed-button">Completed</button>
+        </div>
+
+        <div class="clear-completed">
+          <button class="clear-completed-button">Clear Completed</button>
+        </div>
+      </section>
+
+      <div class="mobile-state-buttons">
+        <button class="states-buttons all-button">All</button>
+        <button class="states-buttons active-button">Active</button>
+        <button class="states-buttons completed-button">Completed</button>
+      </div>
+
+      <p class="reorder-statement">Drag and drop to reorder list</p>
+    </main>
+  </body>
+</html>
