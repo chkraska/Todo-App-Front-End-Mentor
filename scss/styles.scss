@@ -18,7 +18,7 @@
   --hover-state-text: #4a78d1;
   --background-color: #fafafa;
   --border-bottom: #ceced188;
-  --background-image: url(images/bg-desktop-light.jpg);
+  --background-image: url(/images/bg-desktop-light.jpg);
   --theme-icon: url(images/icon-sun.svg);
   --box-shadow: #e5e6eb;
   --reorder: #aaa9b3;
@@ -124,7 +124,7 @@ body{
   width: 0px;
   height: 0px;
   background-color: rgba(169,118,248,1);
-  background-image: url(images/icon-check.svg);
+  background-image: url(/images/icon-check.svg);
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: var(--checkbox);
