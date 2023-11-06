@@ -18,7 +18,7 @@
   --background-color: #fafafa;
   --border-bottom: #ceced188;
   --background-image: url(/images/bg-desktop-light.jpg);
-  --theme-icon: url(images/icon-sun.svg);
+  --theme-icon: url(/images/icon-sun.svg);
   --box-shadow: #e5e6eb;
   --reorder: #aaa9b3;
 }
@@ -37,7 +37,7 @@
   --background-color: #181824;
   --border-bottom: #eae9ed9a;
   --background-image: url(/images/bg-desktop-dark.jpg);
-  --theme-icon: url(images/icon-moon.svg);
+  --theme-icon: url(/images/icon-moon.svg);
   --box-shadow: #101119;
   --reorder:#595970;
 }
