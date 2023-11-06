@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*, *::after, *::before {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* light theme*/
+:root {
+  --title: #fffffc;
+  --section-background-color: #ffffff;
+  --placeholder: #99989f;
+  --checkbox: #a5a9b5;
+  --strikethrough:#d6d6d9;
+  --todoItem-text:#605f78;
+  --state-text:#a5a6ae;
+  --check: #a5a9b5;
+  --hover-state-text: #4a78d1;
+  --background-color: #fafafa;
+  --border-bottom: #ceced188;
+  --background-image: url(/images/bg-desktop-light.jpg);
+  --theme-icon: url(images/icon-sun.svg);
+  --box-shadow: #e5e6eb;
+  --reorder: #aaa9b3;
+}
+
+/*dark theme*/
+.darkmode {
+  --title: #fffffc;
+  --section-background-color: #25273c;
+  --placeholder: #777a8f;
+  --checkbox: #eef1ff;
+  --strikethrough:#5a5c73;
+  --todoItem-text:#b3b5cf;
+  --state-text:#585a76;
+  --check: #eef1ff;
+  --hover-state-text: #4a78d1;
+  --background-color: #181824;
+  --border-bottom: #eae9ed9a;
+  --background-image: url(/images/bg-desktop-dark.jpg);
+  --theme-icon: url(images/icon-moon.svg);
+  --box-shadow: #101119;
+  --reorder:#595970;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  background-image: var(--background-image);
+  transition: 0.01s linear;
+  background-repeat: no-repeat;
+  background-size: 100% 36%;
+}
+
+.state-clear {
+  box-shadow: 0px 35px 40px var(--box-shadow);
+  z-index: -2;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* todo title*/
+.title {
+  margin-top: 6rem;
+  height: 40px;
+}
+
+.title-todo {
+  display: flex;
+  gap: 8rem;
+}
+
+.title-todo h1 {
+  font-family: "Josefin Sans";
+  color: var(--title);
+  letter-spacing: 1rem;
+  font-size: 35px;
+}
+
+.theme {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: 0.01s linear;
+}
+
+/* todo input */
+.todo-input {
+  margin-top: 50px;
+  background-color: var(--section-background-color);
+  padding: 18px;
+  transition: 0.01s linear;
+  border-radius: 5px;
+}
+
+.bubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 0.5px solid var(--checkbox);
+  box-shadow: var(--checkbox);
+  cursor: pointer;
+}
+
+.bubble::after {
+  content: "";
+  display: block;
+  opacity: 0;
+  width: 0px;
+  height: 0px;
+  background-color: rgb(169, 118, 248);
+  background-image: url(/images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: var(--checkbox);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked ~ .bubble::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}
+
+#new-todo-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.todo-content-input input::placeholder {
+  font-family: "Josefin Sans";
+  display: flex;
+  align-items: center;
+  color: var(--placeholder);
+}
+
+.todo-content-input .input-text {
+  font-family: "Josefin Sans";
+  display: flex;
+  align-items: center;
+  color: var(--todoItem-text);
+}
+
+.todo-content-input .input-text {
+  font-family: "Josefin Sans";
+  display: flex;
+  align-items: center;
+  color: var(--todoItem-text);
+}
+
+.todo-input .todo-content-input, .todo-input input[type=text] {
+  width: 100%;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+}
+
+.todo-input .input-text {
+  padding-top: 3.5px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  color: var(--todoItem-text);
+}
+
+.todo-content .input-text {
+  padding-top: 3.5px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  color: var(--todoItem-text);
+}
+
+.todo-input .input-text {
+  padding-top: 3.5px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  color: var(--todoItem-text);
+}
+
+.todo-content .input-text {
+  padding-top: 3.5px;
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  color: var(--todoItem-text);
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+/*todo-list-section*/
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-item {
+  font-family: "Josefin Sans";
+  background-color: var(--section-background-color);
+  display: flex;
+  padding: 18px;
+  border-bottom: 1px solid var(--border-bottom);
+  transition: 0.01s linear;
+  gap: 1rem;
+}
+
+.todo-item:nth-child(1) {
+  border-radius: 5px 5px 0px 5px;
+}
+
+.list-container .todo-content input[type=text] {
+  display: flex;
+  align-items: center;
+  font-family: "Josefin Sans";
+  font-size: 18px;
+}
+
+.todo-item .todo-content, .todo-item input[type=text] {
+  cursor: move;
+  width: 100%;
+}
+
+button {
+  appearance: none;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  color: white;
+}
+
+.todo-item-dragable {
+  cursor: move;
+}
+
+.draggable.dragging {
+  opacity: 0.5;
+}
+
+/*clear state section*/
+.state-clear {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--section-background-color);
+  padding: 18px;
+  color: var(--state-text);
+  transition: 0.01s linear;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.count {
+  font-family: "Josefin Sans";
+}
+
+.states-buttons {
+  font-family: "Josefin Sans";
+  color: var(--todoItem-text);
+  font-weight: 700;
+}
+
+.states-buttons:hover {
+  color: var(--hover-state-text);
+}
+
+.clear-completed-button {
+  font-family: "Josefin Sans";
+  color: var(--todoItem-text);
+}
+
+.clear-completed-button:hover {
+  color: var(--hover-state-text);
+}
+
+.todo-item.done input[type=text] {
+  text-decoration: line-through;
+  color: var(--strikethrough);
+}
+
+.reorder-statement {
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Josefin Sans";
+  color: var(--reorder);
+}
+
+.mobile-state-buttons {
+  display: block;
+  font-family: "Josefin Sans";
+  color: var(--todoItem-text);
+  font-weight: 700;
+  background-color: var(--section-background-color);
+  margin-top: 20px;
+  padding: 18px;
+  color: var(--state-text);
+  transition: 0.01s linear;
+  border-radius: 5px 5px 5px 5px;
+  text-align: center;
+  box-shadow: 0px 35px 40px var(--box-shadow);
+}
+
+.desktop-state-buttons {
+  display: none;
+}
+
+/* responsive*/
+@media (min-width: 600px) {
+  .title-todo {
+    display: flex;
+    gap: 20rem;
+  }
+  .desktop-state-buttons {
+    display: block;
+  }
+  .state-clear {
+    box-shadow: none;
+  }
+  .mobile-state-buttons {
+    display: none;
+  }
+}/*# sourceMappingURL=styles.css.map */
